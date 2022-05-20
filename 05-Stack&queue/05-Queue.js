@@ -22,6 +22,21 @@ var controlAcces = function (queue, event) {
   // crean instancia de Queue
   // los que cumplen los rquerimientos solo agregan (push) al array sus names
   // en caso que no cumplan los dequeue de la queue
+
+  let newArray = [];
+      let numeroTicket = [];
+      for (let i = 0; i < queue.array.length; i++) {
+        if (queue.array[i].age >= 18) {
+          if (queue.array[i].ticket.event === event && !(numeroTicket.includes(queue.array[i].ticket.number))) {
+            newArray.push(queue.array[i].fullname);
+            numeroTicket.push(queue.array[i].ticket.number);
+          }
+        } else {
+          queue.dequeue();
+        }
+      }
+
+      return newArray
   
 }
 

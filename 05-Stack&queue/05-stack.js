@@ -16,7 +16,19 @@ const { Stack, Queue } = require("../estructuras");
 
 function efectoEspejo(str) {
   //tu codigo aqui
-  
+
+  var pil = new Stack();
+  var res = '';
+  for (let i = 0; i <= str.length ; i++) {
+    if (str[i] != ' ' && str[i]) pil.colocar(str[i]);
+    if (str[i] == ' ' || !str[i]) {
+      while (pil.array.length > 0) {
+        res = res + pil.quitar();
+      }
+      res = res + ' ';
+    }
+  }
+  return res;
 }
 
 const stackito = new Stack();
@@ -65,7 +77,7 @@ console.log(stackito);
   */
 
 function parentesisBalanceaDOS(str) {
- 
+
 }
 
 

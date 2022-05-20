@@ -16,7 +16,22 @@ function insertionSort(array) {
   // el array recibido como parámetro utilizando arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-  
+  for ( let i=1; i<array.length;i++){
+    let j = i-1;
+    let current = array [i];
+    do{
+      if(current < array [j]){
+        array[j+1]=array[j];
+        j--;
+      } else {
+        array[j+1]=current;
+        break;
+      }
+    } while(j>=0)
+    array[j+1] = current;
+  }
+  return array;
+
 }
 // insertionSort(array);
 
